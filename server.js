@@ -1,29 +1,36 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+var db = require("./models");
 
-// Configure body parser for AJAX requests
-app.use(bodyParser.urlencoded({ extended: false }));
+// Sets up the Express App
+// =============================================================
+
+
+
+// Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
-// Serve up static assets
-app.use(express.static("client/build"));
-// Add routes, both API and view
-app.use(routes);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// Set up promises with mongoose
-mongoose.Promise = global.Promise;
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
-  {
-    useMongoClient: true
-  }
-);
+// Static directory to be served
+app.use(express.static("views"));
 
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+// Routes
+// =============================================================
+// require("./app/routes/api-routes.js")(app);
+
+// // Here we introduce HTML routing to serve different HTML files
+// require("./routes/api-routes.js")(app);
+// require("./routes/html-routes.js")(app);
+
+// Starts the server to begin listening
+// =============================================================
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

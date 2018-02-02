@@ -1,0 +1,1 @@
+CREATE DATABASE reit_mgt_db;
