@@ -25,7 +25,8 @@ app.use(express.static("client/build"));
 // require("./app/routes/api-routes.js")(app);
 
 // // Here we introduce HTML routing to serve different HTML files
-// require("./routes/api-routes.js")(app);
+
+require("./routes/api.js")(app);
 // require("./routes/html-routes.js")(app);
 
 // Starts the server to begin listening

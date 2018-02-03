@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Renter";
+import Renters from "./pages/Renter";
 //import Detail from "./pages/Detail";
 //import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -10,8 +10,8 @@ const App = () =>
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Books} />
-        <Route exact path="/renter" component={Books} />
+        <Route exact path="/" component={Renters} />
+        <Route exact path="/renter" component={Renters} />
 
       </Switch>
     </div>

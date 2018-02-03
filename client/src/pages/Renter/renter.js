@@ -7,31 +7,32 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Books extends Component {
+class Renters extends Component {
   state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    requests: [],
+    firstName: "",
+    lastName: "",
+    emailAddress: "",
+    Description: ""
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadRequests();
   }
 
- loadBooks = () => {
-   API.getBooks()
+ loadRequests = () => {
+   API.getRequests()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ requests: res.data, firstName: "", lastName: "", emailAddress: "", Description: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-   API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
+  // deleteBook = id => {
+  //  API.deleteBook(id)
+  //     .then(res => this.loadBooks())
+  //     .catch(err => console.log(err));
+  // };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -44,9 +45,10 @@ class Books extends Component {
     event.preventDefault();
     if (this.state.title && this.state.author) {
      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        emailAddress: this.state.emailAddress,
+        Description: this.state.Description
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -59,40 +61,46 @@ class Books extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Maintenance Request</h1>
+              <p>Maintenance Request</p>
             </Jumbotron>
             <form>
               <Input
-                value={this.state.title}
+                value={this.state.firstName}
                 onChange={this.handleInputChange}
-                name="title"
-                placeholder="Name (required)"
+                name="firstName"
+                placeholder="First Name"
               />
               <Input
-                value={this.state.author}
+                value={this.state.lastName}
                 onChange={this.handleInputChange}
-                name="author"
+                name="lastName"
+                placeholder="Last Name"
+              />
+              <Input
+                value={this.state.emailAddress}
+                onChange={this.handleInputChange}
+                name="emailAddress"
                 placeholder="Email Address (required)"
               />
               <TextArea
-                value={this.state.synopsis}
+                value={this.state.Description}
                 onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Discription (Optional)"
+                name="Description"
+                placeholder="Issue Description (Optional)"
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Request
+                Submit An Issue
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <p>Open Issues</p>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.requests.length ? (
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
@@ -115,4 +123,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Renters;
