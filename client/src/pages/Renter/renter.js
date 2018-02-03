@@ -23,9 +23,10 @@ class Renters extends Component {
 
  loadRequests = () => {
    API.getRequests()
-      .then(res =>
+      .then((res) => {
+        console.log('this is res ----', res);
         this.setState({ requests: res.data, firstName: "", lastName: "", emailAddress: "", Description: "" })
-      )
+      })
       .catch(err => console.log(err));
   };
 
@@ -57,7 +58,8 @@ class Renters extends Component {
     }
   };
 
-  render() {
+  render() {  
+    console.log('this is our staet ----', this.state);
     return (
       <Container fluid>
         <Row>
@@ -105,18 +107,13 @@ class Renters extends Component {
             </Jumbotron>
             <PaypalBtn />
             {this.state.requests.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                  </ListItem>
+              <div>
+                {this.state.requests.map(singleDude => (
+                  <div>
+                    <h1>{singleDude.first_name}</h1>
+                  </div>
                 ))}
-              </List>
+              </div>
             ) : (
               <h3>Here are your Open Issues with REIT Managment:</h3>
             )}
