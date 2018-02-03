@@ -3,9 +3,9 @@ import axios from "axios";
 export default {
   getRequests: function() {
     return axios.get("/requests")
-    .then(function(response) {
-      console.log(response);
-    });
+    // .then(function(response) {
+    //   console.log('our resoinse!!!',response);
+    // });
   },
 
  saveRequests: function(requestsData) {
