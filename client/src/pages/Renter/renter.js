@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import PaypalBtn from "../../components/Paypal";
 
 class Renters extends Component {
   state = {
@@ -97,10 +98,12 @@ class Renters extends Component {
               </FormBtn>
             </form>
           </Col>
+
           <Col size="md-6">
             <Jumbotron>
               <p>Open Issues</p>
             </Jumbotron>
+            <PaypalBtn />
             {this.state.requests.length ? (
               <List>
                 {this.state.books.map(book => (
