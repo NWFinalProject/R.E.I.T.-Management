@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
+var path = require("path");
 
 // Sets up the Express App
 // =============================================================
@@ -17,7 +18,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory to be served
-app.use(express.static("views"));
+app.use(express.static("client/build"));
 
 // Routes
 // =============================================================
@@ -29,6 +30,12 @@ app.use(express.static("views"));
 
 // Starts the server to begin listening
 // =============================================================
+
+
+app.get('*', function(req, res) {
+	res.sendFile(path.join(__dirname, "./client/build"));
+});
+
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
