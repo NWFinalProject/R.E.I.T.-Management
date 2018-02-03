@@ -43,14 +43,15 @@ class Renters extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-     API.saveBook({
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        emailAddress: this.state.emailAddress,
-        Description: this.state.Description
+    if (this.state.firstName && this.state.lastName && this.state.emailAddress && this.state.Description) {
+      console.log(this.state);
+     API.saveRequests({
+        first_name: this.state.firstName,
+        last_name: this.state.lastName,
+        email_address: this.state.emailAddress,
+        request_detail: this.state.Description
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadRequests())
         .catch(err => console.log(err));
     }
   };
@@ -89,7 +90,7 @@ class Renters extends Component {
                 placeholder="Issue Description (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.firstName && this.state.lastName && this.state.emailAddress && this.state.Description)}
                 onClick={this.handleFormSubmit}
               >
                 Submit An Issue
@@ -114,7 +115,7 @@ class Renters extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>Here are your Open Issues with REIT Managment:</h3>
             )}
           </Col>
         </Row>

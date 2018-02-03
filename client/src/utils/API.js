@@ -6,8 +6,16 @@ export default {
     .then(function(response) {
       console.log(response);
     });
+  },
+
+ saveRequests: function(requestsData) {
+    return axios.post("/newrequest", requestsData);
   }
+
 }
+
+ 
+ 
 
 
 // export default {
