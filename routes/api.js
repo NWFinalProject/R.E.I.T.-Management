@@ -8,7 +8,16 @@ module.exports = function(app){
         });
     });
 
-
+    app.post("/newrequest", function(req, res) {
+    	console.log(req.body);
+    	db.Renters.create({
+    	first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email_address: req.body.email_address,
+        request_detail: req.body.request_detail,
+        request_status: "New"
+    	})
+    })
 
 
 }
