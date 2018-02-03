@@ -16,7 +16,9 @@ module.exports = function(app){
         email_address: req.body.email_address,
         request_detail: req.body.request_detail,
         request_status: "New"
-    	})
+    	});
+
+    	res.send(200);
     })
 
 

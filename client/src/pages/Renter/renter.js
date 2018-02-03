@@ -46,15 +46,22 @@ class Renters extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.emailAddress && this.state.Description) {
-      console.log(this.state);
+    
+    console.log(this.state);
+
+    let self = this;
+     
      API.saveRequests({
         first_name: this.state.firstName,
         last_name: this.state.lastName,
         email_address: this.state.emailAddress,
         request_detail: this.state.Description
       })
-        .then(res => this.loadRequests())
-        .catch(err => console.log(err));
+      .then( function(res) {
+        console.log(res);
+        self.loadRequests();
+      })
+      .catch(err => console.log(err));
     }
   };
 
@@ -107,15 +114,17 @@ class Renters extends Component {
             </Jumbotron>
             <PaypalBtn />
             {this.state.requests.length ? (
-              <div>
+              <div className="collection">
+                <h4>Here are your Open Issues with REIT Managment:</h4>
                 {this.state.requests.map(singleDude => (
-                  <div>
-                    <h1>{singleDude.first_name}</h1>
-                  </div>
+                  <a className="collection-item">
+                    <span className="badge">{singleDude.request_status}</span>
+                    {singleDude.request_detail}
+                  </a>
                 ))}
               </div>
             ) : (
-              <h3>Here are your Open Issues with REIT Managment:</h3>
+              <h3>There are no open issues.</h3>
             )}
           </Col>
         </Row>
