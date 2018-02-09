@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3001;
 var db = require("./models");
 var path = require("path");
 var passport = require("./config/passport");
-
 // Sets up the Express App
 // =============================================================
 
