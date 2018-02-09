@@ -33,7 +33,7 @@ const Homepage = props =>
           <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
         </div>
         <div class="row center">
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">New Users</a>
+         <Link to="/signup"> <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">New Users</a> </Link>
         </div>
         
 

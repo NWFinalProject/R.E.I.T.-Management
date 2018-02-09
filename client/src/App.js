@@ -4,7 +4,9 @@ import Renters from "./pages/Renter";
 //import Detail from "./pages/Detail";
 //import NoMatch from "./pages/NoMatch";
 // import Nav from "./components/Nav";
-import Home from "./components/Home/home.js"
+import Home from "./components/Home/home.js";
+import Signup from "./pages/Signup";
+
 
 const App = () =>
   <Router>
@@ -13,6 +15,7 @@ const App = () =>
         <Route exact path="/" component={Home} />
         <Route exact path="/homepage" component={Home} />
         <Route exact path="/renter" component={Renters} />
+        <Route exact path="/signup" component={Signup} />
       </Switch>
     </div>
   </Router>;
