@@ -51,7 +51,7 @@ const Homepage = props =>
         <div class="col s12 m4">
           <div class="icon-block">
             
-           <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Administrators</a>
+          <Link to="/admin"> <a id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Administrators</a></Link>
 
             <p class="light">Login Help</p>
           </div>
@@ -59,14 +59,14 @@ const Homepage = props =>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Renters</a>
+            <Link to="/renter"><a id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Renters</a></Link>
             <p class="light">Login Help</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Contractors</a>
+            <Link to="/contractor"><a id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Contractors</a></Link>
             <p class="light">Login Help</p>
           </div>
         </div>
