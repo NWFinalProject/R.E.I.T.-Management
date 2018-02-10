@@ -20,6 +20,18 @@ module.exports = function(app){
 
     	res.send(200);
     })
-
+    app.post("/signup", function(req, res) {
+       console.log(res.body);
+   db.User.create({
+     username: req.body.username,
+     email: req.body.email,
+     password: req.body.password
+   }).then(function() {
+     res.redirect(307, "/renter");
+   }).catch(function(err) {
+     console.log(err);
+     res.json(err);
+   });
+ });
 
 }

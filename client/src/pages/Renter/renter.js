@@ -14,7 +14,8 @@ class Renters extends Component {
     firstName: "",
     lastName: "",
     emailAddress: "",
-    Description: ""
+    Description: "",
+    belowSection: "make_request"
   };
 
   componentDidMount() {
@@ -65,15 +66,16 @@ class Renters extends Component {
     }
   };
 
-  render() {  
-    console.log('this is our staet ----', this.state);
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <p>Maintenance Request</p>
-            </Jumbotron>
+/* ************* Forms **************************** */
+
+  render() {
+    
+    let htmlThatWillBeShow;
+
+    const MakeARequestHtml = (
+      
+          <Col size="md-12">
+            <nav-wrapper>
             <form>
               <Input
                 value={this.state.firstName}
@@ -106,9 +108,13 @@ class Renters extends Component {
                 Submit An Issue
               </FormBtn>
             </form>
+            </nav-wrapper>
           </Col>
+    );
 
-          <Col size="md-6">
+    const ShowRequest = (
+
+                <Col size="md-6">
             <Jumbotron>
               <p>Open Issues</p>
             </Jumbotron>
@@ -127,7 +133,67 @@ class Renters extends Component {
               <h3>There are no open issues.</h3>
             )}
           </Col>
-        </Row>
+    );
+
+// toggleHtml = () {
+//   if (this.state.belowSection === "make_request") {
+//     this.setState
+//   }
+// }
+    if (this.state.belowSection === "make_request") {
+      htmlThatWillBeShow = MakeARequestHtml;
+    } else if (this.state.belowSection === "show_request") {
+      htmlThatWillBeShow = ShowRequest;
+    }
+
+/* ************* What shows on the page**************************** */
+    return (
+      <Container fluid>
+
+    <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="/homepage">
+        <img id="logo-container" class="brand-logo" src="Logo2.png"/> 
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a id="rentlink" href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=e6a6c0f3d4816&mfid=1517945926403_e6a6c0f3d4816#/checkout/openButton">Quick Rent Payment</a></li>
+      </ul>
+
+      <ul id="rentlink" class="side-nav">
+        <li><a href="https://www.paypal.com/cgi-bin/webscr">Rent Payment</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+    
+        <h1 class="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+        <div class="row center">
+        </div>
+        <div class="row center">
+        </div>
+        
+
+      </div>
+    </div>
+    <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+  </div>
+
+      
+    <nav>
+    <div class="nav-wrapper">
+      <ul class="left hide-on-med-and-down">
+        <li><button onclick="MakeARequestHtml">Make a Request</button></li>
+        <li><button onclick="MakeARequestHtml">Show Request</button></li>
+      </ul>
+    </div>
+  </nav>
+
+        {htmlThatWillBeShow}
       </Container>
     );
   }
