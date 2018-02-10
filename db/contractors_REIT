@@ -1,0 +1,9 @@
+USE reit_mgt_db;
+
+
+INSERT INTO Contractors (first_name, last_name, email_address, company_name, createdAt, updatedAt)
+VALUES ("Jane", "Smith", "janesmith@contractor.com", "ABC Contractors", '2018-02-09 21:33:00', '2018-02-09 21:33:00');
+INSERT INTO Contractors (first_name, last_name, email_address, company_name, createdAt, updatedAt)
+VALUES ("Bob", "Jackson", "bob@jacksonsupplies.com", "Jackson Supplies", '2018-02-09 21:33:00', '2018-02-09 21:33:00');
+INSERT INTO Contractors (first_name, last_name, email_address, company_name, createdAt, updatedAt)
+VALUES ("Nancy", "Jones", "nancy@jones.com", "Jones Contractors", '2018-02-09 21:33:00', '2018-02-09 21:33:00');

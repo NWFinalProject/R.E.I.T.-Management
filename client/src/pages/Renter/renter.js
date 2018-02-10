@@ -167,7 +167,7 @@ class Renters extends Component {
   </nav>
 
 
-  <div id="index-banner" class="parallax-container">
+  <div id="index-banner" style={{height: '25%'}} class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
     

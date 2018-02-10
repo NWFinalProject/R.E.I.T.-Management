@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-    var Renter = sequelize.define("Renter", {
+    var Contractor = sequelize.define("Contractor", {
         first_name: {
             type: DataTypes.STRING,
             allowNull: true
@@ -13,22 +13,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true
         },
-        request_detail: {
+        company_name: {
             type: DataTypes.STRING,
-            allowNull: true
-        },
-        request_status: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        contractor_name: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        scheduled_date: {
-            type: DataTypes.DATE,
             allowNull: true
         }
     });
-    return Renter;
+    return Contractor;
 };
