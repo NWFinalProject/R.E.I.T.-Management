@@ -8,13 +8,14 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import PaypalBtn from "../../components/Paypal";
 
-class Contractor extends Component {
+class Renters extends Component {
   state = {
     requests: [],
     firstName: "",
     lastName: "",
     emailAddress: "",
-    Description: ""
+    Description: "",
+    belowSection: "make_request"
   };
 
   componentDidMount() {
@@ -65,15 +66,16 @@ class Contractor extends Component {
     }
   };
 
-  render() {  
-    console.log('this is our staet ----', this.state);
-    return (
+/* ************* Forms **************************** */
+
+  render() {
+    
+    let htmlThatWillBeShow;
+
+    const MakeARequestHtml = (
       <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <p>Maintenance Request</p>
-            </Jumbotron>
+          <Col size="md-12">
+            <nav-wrapper>
             <form>
               <Input
                 value={this.state.firstName}
@@ -106,9 +108,14 @@ class Contractor extends Component {
                 Submit An Issue
               </FormBtn>
             </form>
+            </nav-wrapper>
           </Col>
+          </Container>
+    );
 
-          <Col size="md-6">
+    const ShowRequest = (
+
+                <Col size="md-6">
             <Jumbotron>
               <p>Open Issues</p>
             </Jumbotron>
@@ -127,10 +134,68 @@ class Contractor extends Component {
               <h3>There are no open issues.</h3>
             )}
           </Col>
-        </Row>
+
+    );
+
+// toggleHtml = () {
+//   if (this.state.belowSection === "make_request") {
+//     this.setState
+//   }
+// }
+    if (this.state.belowSection === "make_request") {
+      htmlThatWillBeShow = MakeARequestHtml;
+    } else if (this.state.belowSection === "show_request") {
+      htmlThatWillBeShow = ShowRequest;
+    }
+
+/* ************* What shows on the page**************************** */
+    return (
+      <Container fluid>
+
+    <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="/">
+        <img id="logo-container" class="brand-logo" src="Logo2.png"/> 
+    </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a id="rentlink" href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=e6a6c0f3d4816&mfid=1517945926403_e6a6c0f3d4816#/checkout/openButton">Quick Rent Payment</a></li>
+      </ul>
+
+      <ul id="rentlink" class="side-nav">
+        <li><a href="https://www.paypal.com/cgi-bin/webscr">Rent Payment</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div id="index-banner" style={{height: '50px', minHeight: '200px'}} class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <h1 class="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+          <div class="row center">
+          </div>
+            <div class="row center">
+            </div>
+        </div>
+      </div>
+    <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+  </div>
+
+      
+    <nav class="white" >
+   
+      <ul class="btn-large waves-effect waves-light teal lighten-1" class="center hide-on-med-and-down">
+        <li><button class="btn-large waves-effect waves-light teal lighten-1" onclick="MakeARequestHtml">Make a Request</button></li>
+        <li><button class="btn-large waves-effect waves-light teal lighten-1"  onclick="MakeARequestHtml">Show Request</button></li>
+      </ul>
+ 
+  </nav>
+
+        {htmlThatWillBeShow}
       </Container>
     );
   }
 }
 
-export default Contractor;
+export default Renters;

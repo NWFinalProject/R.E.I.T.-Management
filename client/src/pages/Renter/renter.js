@@ -73,7 +73,7 @@ class Renters extends Component {
     let htmlThatWillBeShow;
 
     const MakeARequestHtml = (
-      
+      <Container fluid>
           <Col size="md-12">
             <nav-wrapper>
             <form>
@@ -110,6 +110,7 @@ class Renters extends Component {
             </form>
             </nav-wrapper>
           </Col>
+          </Container>
     );
 
     const ShowRequest = (
@@ -133,6 +134,7 @@ class Renters extends Component {
               <h3>There are no open issues.</h3>
             )}
           </Col>
+
     );
 
 // toggleHtml = () {
@@ -181,13 +183,13 @@ class Renters extends Component {
   </div>
 
       
-    <nav>
-    <div class="nav-wrapper">
-      <ul class="left hide-on-med-and-down">
-        <li><button onclick="MakeARequestHtml">Make a Request</button></li>
-        <li><button onclick="MakeARequestHtml">Show Request</button></li>
+    <nav class="white" >
+   
+      <ul class="btn-large waves-effect waves-light teal lighten-1" class="center hide-on-med-and-down">
+        <li><button class="btn-large waves-effect waves-light teal lighten-1" onclick="MakeARequestHtml">Make a Request</button></li>
+        <li><button class="btn-large waves-effect waves-light teal lighten-1"  onclick="MakeARequestHtml">Show Request</button></li>
       </ul>
-    </div>
+ 
   </nav>
 
         {htmlThatWillBeShow}
