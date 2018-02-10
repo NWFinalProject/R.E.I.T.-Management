@@ -152,7 +152,7 @@ class Renters extends Component {
 
     <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a href="/homepage">
+      <a href="/">
         <img id="logo-container" class="brand-logo" src="Logo2.png"/> 
     </a>
       <ul class="right hide-on-med-and-down">
@@ -167,19 +167,16 @@ class Renters extends Component {
   </nav>
 
 
-  <div id="index-banner" style={{height: '25%'}} class="parallax-container">
+  <div id="index-banner" style={{height: '50px', minHeight: '200px'}} class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-    
         <h1 class="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
-        <div class="row center">
+          <div class="row center">
+          </div>
+            <div class="row center">
+            </div>
         </div>
-        <div class="row center">
-        </div>
-        
-
       </div>
-    </div>
     <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
   </div>
 
