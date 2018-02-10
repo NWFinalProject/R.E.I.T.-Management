@@ -62,7 +62,7 @@ const Homepage = props =>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <Link to="/contractor"><a id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Contractors</a></Link>>
+            <Link to="/contractor"><a id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Contractors</a></Link>
           </div>
         </div>
       </div>
