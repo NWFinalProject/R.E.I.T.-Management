@@ -100,7 +100,13 @@ class Admin extends Component {
     );
       
     const ShowInvoice = (
-      console.log("this is where the second form goes")
+      <div class="collection">
+        <a href="#!" class="collection-item">Invoice 1</a>
+        <a href="#!" class="collection-item active">Invoice 2</a>
+        <a href="#!" class="collection-item">Invoice 3</a>
+        <a href="#!" class="collection-item">Invoice 4</a>
+      </div>
+
     );
 
 
@@ -155,7 +161,7 @@ class Admin extends Component {
 
       <nav class="white" >
  <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}> Requests</button></li>
-        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>Show Invoices</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_invoice")}}>Show Invoices</button></li>
       </nav>
 
          {htmlThatWillShow}

@@ -38,7 +38,7 @@ class Admin extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    console.log('this is our name of the thing we are going ot change', name);
+    console.log('this is our name of the thing we are going to change', name);
     this.setState({
       [name]: value
     });
@@ -68,34 +68,30 @@ class Admin extends Component {
       .catch(err => console.log(err));
     }
   };
-
+  handleBelowState = type => {
+    console.log("Working!",type);
+    this.setState({belowSection: type})
+  }
   render() {  
 
     let htmlThatWillShow;
 
     const ShowARequestHtml = (
-      <Container fluid>
-        <Col size="md-12">
-          <nav-wrapper>           
-            {this.state.requests.length ? (
-              <div className="collection">
-                <h4>Here are all the Open Issues:</h4>
-                {this.state.requests.map(singleDude => (
-                  <div>
-                    <AdminForm singleDude={singleDude} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <h3>There are no open issues.</h3>
-            )}
-          </nav-wrapper>
-        </Col>
-      </Container>
+      <div class="collection">
+        <a href="#!" class="collection-item">Entered Request 1</a>
+        <a href="#!" class="collection-item active">Entered Request 2</a>
+        <a href="#!" class="collection-item">Entered Request 3</a>
+        <a href="#!" class="collection-item">Entered Request 4</a>
+      </div>
     );
       
     const ShowInvoice = (
-      console.log("this is where the second form goes")
+            <div class="collection">
+        <a href="#!" class="collection-item">Invoice 1</a>
+        <a href="#!" class="collection-item active">Invoice 2</a>
+        <a href="#!" class="collection-item">Invoice 3</a>
+        <a href="#!" class="collection-item">Invoice 4</a>
+      </div>
     );
 
 
@@ -103,6 +99,16 @@ class Admin extends Component {
       htmlThatWillShow = ShowARequestHtml;
     } else if (this.state.belowSection === "show_invoice") {
       htmlThatWillShow = ShowInvoice;
+    }
+
+      const style = {
+      buttonStyle: {
+        width: "100%"
+      },
+      buttonLiStyle: {
+        display: "inline-block",
+        width: "50%"
+      }
     }
 
     return (
@@ -139,10 +145,8 @@ class Admin extends Component {
       </div>
 
       <nav class="white" >
-        <ul class="btn-large waves-effect waves-light teal lighten-1" class="center hide-on-med-and-down">
-          <li><button class="btn-large waves-effect waves-light teal lighten-1" onclick="MakeARequestHtml">Open Issues</button></li>
-          <li><button class="btn-large waves-effect waves-light teal lighten-1"  onclick="MakeARequestHtml">Invoices</button></li>
-        </ul>
+ <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("show_request")}}>Show Request</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_invoice")}}>Show Invoice</button></li>
       </nav>
 
        {htmlThatWillShow}

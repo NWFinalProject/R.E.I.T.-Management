@@ -49,14 +49,33 @@ class Signup extends Component {
   render() {  
     console.log('this is our staet ----', this.state);
     return (
+
       <Container fluid>
-        <Row>
+
+      <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+          <a href="/">
+            <img id="logo-container" class="brand-logo" src="Logo2.png"/> 
+          </a>
+      
+          <ul class="right hide-on-med-and-down">
+            <li><a id="signOutLink" href="">Sign Out</a></li>
+          </ul>
+
+          <ul id="signOutlink" class="side-nav">
+             <li><a href="">Sign Out</a></li>
+          </ul>
+      
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+
           <Col size="md-12">
             <Jumbotron>
               <p>New User</p>
             </Jumbotron>
             <form>
- <label>
+              <label>
               Choose Your Role:
               <select name="role" onChange={this.handleInputChange} value={this.state.role} style={{display: "block"}}>
                 <option value="administrator">Administrator</option>
@@ -93,7 +112,7 @@ class Signup extends Component {
              
             </form>
           </Col>
-          </Row>
+          
       </Container>
     );
   }
