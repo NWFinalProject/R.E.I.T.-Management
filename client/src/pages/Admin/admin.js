@@ -7,6 +7,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import AdminForm from '../../components/FormComponent/AdminIssueForm.js';
+import { Chart } from 'react-google-charts';
 
 
 class Admin extends Component {
@@ -38,7 +39,7 @@ class Admin extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    console.log('this is our name of the thing we are going ot change', name);
+    console.log('this is our name of the thing we are going to change', name);
     this.setState({
       [name]: value
     });
@@ -69,29 +70,33 @@ class Admin extends Component {
     }
   };
 
+    handleBelowState = type => {
+    console.log("Working!",type);
+    this.setState({belowSection: type})
+    this.loadRequests()
+  }
+
   render() {  
 
     let htmlThatWillShow;
 
     const ShowARequestHtml = (
-      <Container fluid>
-        <Col size="md-12">
-          <nav-wrapper>           
+      <div className="collection">
+
+          
             {this.state.requests.length ? (
-              <div className="collection">
-                <h4>Here are all the Open Issues:</h4>
+              <div className="collection-item">
                 {this.state.requests.map(singleDude => (
-                  <div>
+                  <div style={{color: 'black', fontSize: '20px'}} className="collection-item">
                     <AdminForm singleDude={singleDude} />
                   </div>
+      
                 ))}
               </div>
             ) : (
               <h3>There are no open issues.</h3>
             )}
-          </nav-wrapper>
-        </Col>
-      </Container>
+</div>
     );
       
     const ShowInvoice = (
@@ -103,6 +108,16 @@ class Admin extends Component {
       htmlThatWillShow = ShowARequestHtml;
     } else if (this.state.belowSection === "show_invoice") {
       htmlThatWillShow = ShowInvoice;
+    }
+
+      const style = {
+      buttonStyle: {
+        width: "100%"
+      },
+      buttonLiStyle: {
+        display: "inline-block",
+        width: "50%"
+      }
     }
 
     return (
@@ -139,13 +154,11 @@ class Admin extends Component {
       </div>
 
       <nav class="white" >
-        <ul class="btn-large waves-effect waves-light teal lighten-1" class="center hide-on-med-and-down">
-          <li><button class="btn-large waves-effect waves-light teal lighten-1" onclick="MakeARequestHtml">Open Issues</button></li>
-          <li><button class="btn-large waves-effect waves-light teal lighten-1"  onclick="MakeARequestHtml">Invoices</button></li>
-        </ul>
+ <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}> Requests</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>Show Invoices</button></li>
       </nav>
 
-       {htmlThatWillShow}
+         {htmlThatWillShow}
 
     </Container>
 

@@ -15,7 +15,7 @@ class Renters extends Component {
     lastName: "",
     emailAddress: "",
     Description: "",
-    belowSection: "make_request"
+    belowSection: "show_request"
   };
 
   componentDidMount() {
@@ -59,7 +59,10 @@ handleInputChange = event => {
       .catch(err => console.log(err));
     }
   };
-
+ handleBelowState = type => {
+    console.log("Working!",type);
+    this.setState({belowSection: type})
+  }
 
   render() {
     
@@ -107,15 +110,15 @@ handleInputChange = event => {
     );
 
     const ShowRequest = (
-
-      <Col size="md-6">
-          <PaypalBtn />
+      
+     
+      
+      <div class="collection">       
             {this.state.requests.length ? (
-              <div className="collection">
-                <h4>Here are your Open Issues with REIT Managment:</h4>
+              <div className="collection-item">
             {this.state.requests.map(singleDude => (
-                <a className="collection-item">
-                  <span className="badge">{singleDude.request_status}</span>
+                <a style={{color: 'black', fontSize: '20px'}} className="collection-item">
+                  <span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span>
                     {singleDude.request_detail}
                 </a>
                 ))}
@@ -123,7 +126,13 @@ handleInputChange = event => {
             ) : (
               <h3>There are no open issues.</h3>
             )}
-      </Col>
+
+      </div>
+
+
+      
+   
+      
     );
 
 
@@ -131,6 +140,16 @@ handleInputChange = event => {
       htmlThatWillShow = MakeARequestHtml;
     } else if (this.state.belowSection === "show_request") {
       htmlThatWillShow = ShowRequest;
+    }
+
+    const style = {
+      buttonStyle: {
+        width: "100%"
+      },
+      buttonLiStyle: {
+        display: "inline-block",
+        width: "50%"
+      }
     }
 
 
@@ -157,7 +176,7 @@ handleInputChange = event => {
         </nav>
 
 
-        <div id="index-banner" style={{height: '50px', minHeight: '200px'}} class="parallax-container">
+        <div id="index-banner" style={{ height: '50px', minHeight: '200px'}} class="parallax-container">
           <div class="section no-pad-bot">
             <div class="container">
               <h1 class="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
@@ -172,13 +191,12 @@ handleInputChange = event => {
 
       
         <nav class="white" >
-   
-          <ul class="btn-large waves-effect waves-light teal lighten-1" class="center hide-on-med-and-down">
-            <li><button class="btn-large waves-effect waves-light teal lighten-1" onclick="MakeARequestHtml">Make a Request</button></li>
-            <li><button class="btn-large waves-effect waves-light teal lighten-1"  onclick="MakeARequestHtml">Show Request</button></li>
-          </ul>
+          
+ <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}>Make a Request</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>Show Request</button></li>
         </nav>
         {htmlThatWillShow}
+
       </Container>
     );
   }

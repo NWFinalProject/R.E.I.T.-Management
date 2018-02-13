@@ -56,6 +56,14 @@ class Signup extends Component {
               <p>New User</p>
             </Jumbotron>
             <form>
+ <label>
+              Choose Your Role:
+              <select name="role" onChange={this.handleInputChange} value={this.state.role} style={{display: "block"}}>
+                <option value="administrator">Administrator</option>
+                <option value="renter">Renter</option>
+                <option value="contractor">Contractor</option>
+              </select>
+            </label>
               <Input
                 value={this.state.username}
                 onChange={this.handleInputChange}

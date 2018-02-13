@@ -10,8 +10,10 @@ export default {
 
  saveRequests: function(requestsData) {
     return axios.post("/newrequest", requestsData);
+  },
+  newUser: function(newUser){
+  	return axios.post("/signup", newUser);
   }
-
 }
 
  

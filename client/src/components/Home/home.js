@@ -71,14 +71,14 @@ const Homepage = props =>
   </div>
 
 
-  <div style={{opacity: '0.5'}} class="parallax-container valign-wrapper">
+  <div style={{opacity: '0.8'}} class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
         </div>
       </div>
     </div>
-    <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 2"/></div>
+    <div style={{opacity: '0.8'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 2"/></div>
   </div>
 
   <div class="container">
@@ -111,14 +111,14 @@ const Homepage = props =>
   </div>
 
 
-  <div style={{opacity: '0.5'}} class="parallax-container valign-wrapper">
+  <div style={{opacity: '0.8'}} class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
         </div>
       </div>
     </div>
-    <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"/></div>
+    <div style={{opacity: '0.8'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"/></div>
   </div>
 
   <footer class="page-footer teal">
