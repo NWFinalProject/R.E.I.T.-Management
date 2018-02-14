@@ -100,11 +100,11 @@ class Admin extends Component {
     );
       
     const ShowInvoice = (
-      <div class="collection">
-        <a href="#!" class="collection-item">Invoice 1</a>
-        <a href="#!" class="collection-item active">Invoice 2</a>
-        <a href="#!" class="collection-item">Invoice 3</a>
-        <a href="#!" class="collection-item">Invoice 4</a>
+      <div className="collection">
+        <a href="#!" className="collection-item">Invoice 1</a>
+        <a href="#!" className="collection-item active">Invoice 2</a>
+        <a href="#!" className="collection-item">Invoice 3</a>
+        <a href="#!" className="collection-item">Invoice 4</a>
       </div>
 
     );
@@ -129,39 +129,39 @@ class Admin extends Component {
     return (
       
     <Container fluid>
-      <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
+      <nav className="white" role="navigation">
+        <div className="nav-wrapper container">
           <a href="/">
-            <img id="logo-container" class="brand-logo" src="Logo2.png"/> 
+            <img id="logo-container" className="brand-logo" src="Logo2.png"/> 
           </a>
       
-          <ul class="right hide-on-med-and-down">
+          <ul className="right hide-on-med-and-down">
             <li><a id="signOutLink" href="">Sign Out</a></li>
           </ul>
 
-          <ul id="signOutlink" class="side-nav">
+          <ul id="signOutlink" className="side-nav">
              <li><a href="">Sign Out</a></li>
           </ul>
       
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
         </div>
       </nav>
 
       
-      <div id="index-banner" style={{height: '50px', minHeight: '200px'}} class="parallax-container">
-        <div class="section no-pad-bot">
-          <div class="container">
-            <h1 class="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
-              <div class="row center"></div>
-              <div class="row center"></div>
+      <div id="index-banner" style={{height: '50px', minHeight: '200px'}} className="parallax-container">
+        <div className="section no-pad-bot">
+          <div className="container">
+            <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+              <div className="row center"></div>
+              <div className="row center"></div>
           </div>
         </div>
-        <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+        <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
       </div>
 
-      <nav class="white" >
- <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}> Requests</button></li>
-        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_invoice")}}>Show Invoices</button></li>
+      <nav className="white" >
+ <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}> Requests</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_invoice")}}>Show Invoices</button></li>
       </nav>
 
          {htmlThatWillShow}

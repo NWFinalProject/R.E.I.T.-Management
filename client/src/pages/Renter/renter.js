@@ -15,7 +15,7 @@ class Renters extends Component {
     lastName: "",
     emailAddress: "",
     Description: "",
-    belowSection: "show_request"
+    belowSection: "make_request"
   };
 
   componentDidMount() {
@@ -113,7 +113,7 @@ handleInputChange = event => {
       
      
       
-      <div class="collection">       
+      <div className="collection">       
             {this.state.requests.length ? (
               <div className="collection-item">
             {this.state.requests.map(singleDude => (
@@ -128,18 +128,31 @@ handleInputChange = event => {
             )}
 
       </div>
+      );
+
+
+      const PayRent = (
+
+      
+            
+            <PaypalBtn />
+              
+
+        );
 
 
       
    
       
-    );
+    
 
 
     if (this.state.belowSection === "make_request") {
       htmlThatWillShow = MakeARequestHtml;
     } else if (this.state.belowSection === "show_request") {
       htmlThatWillShow = ShowRequest;
+    } else if (this.state.belowSection === "payrent") {
+      htmlThatWillShow = PayRent;
     }
 
     const style = {
@@ -148,7 +161,7 @@ handleInputChange = event => {
       },
       buttonLiStyle: {
         display: "inline-block",
-        width: "50%"
+        width: "33.3%"
       }
     }
 
@@ -156,44 +169,45 @@ handleInputChange = event => {
     return (
       <Container fluid>
         
-        <nav class="white" role="navigation">
-          <div class="nav-wrapper container">
+        <nav className="white" role="navigation">
+          <div className="nav-wrapper container">
             <a href="/">
-              <img id="logo-container" class="brand-logo" src="Logo2.png"/> 
+              <img id="logo-container" className="brand-logo" src="Logo2.png"/> 
             </a>
 
-            <ul class="right hide-on-med-and-down">
-              <li><a id="rentlink" href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=e6a6c0f3d4816&mfid=1517945926403_e6a6c0f3d4816#/checkout/openButton">Quick Rent Payment</a></li>
+            <ul className="right hide-on-med-and-down">
+              <li><a id="rentlink" href="#">Sign Out</a></li>
             </ul>
           
-            <ul id="rentlink" class="side-nav">
+            <ul id="rentlink" className="side-nav">
               <li><a href="https://www.paypal.com/cgi-bin/webscr">Rent Payment</a></li>
             </ul>
 
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="nav-mobile" className="button-collapse"><i class="material-icons">menu</i></a>
           
           </div>
         </nav>
 
 
-        <div id="index-banner" style={{ height: '50px', minHeight: '200px'}} class="parallax-container">
-          <div class="section no-pad-bot">
-            <div class="container">
-              <h1 class="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
-                <div class="row center"></div>
-                <div class="row center"></div>
+        <div id="index-banner" style={{ height: '50px', minHeight: '200px'}} className="parallax-container">
+          <div className="section no-pad-bot">
+            <div className="container">
+              <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+                <div className="row center"></div>
+                <div className="row center"></div>
             </div>
           </div>
           
-          <div style={{opacity: '0.5'}} class="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+          <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
         
         </div>
 
       
-        <nav class="white" >
+        <nav className="white" >
           
- <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}>Make a Request</button></li>
-        <li style={style.buttonLiStyle}><button style={style.buttonStyle} class="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>Show Request</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}>Make a Request</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>Open Request</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("payrent")}}>Pay Rent</button></li>
         </nav>
         {htmlThatWillShow}
 

@@ -3389,7 +3389,7 @@ nav ul a span.badge {
 }
 
 .section {
-  padding-top: 4rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 }
 
@@ -5159,10 +5159,10 @@ small {
 .btn-large[disabled],
 .btn-flat[disabled] {
   pointer-events: none;
-  background-color: #DFDFDF !important;
+  background-color: #DFDFDF;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #9F9F9F !important;
+  color: #9F9F9F;
   cursor: default;
 }
 
@@ -5180,8 +5180,8 @@ small {
 .btn-floating[disabled]:hover,
 .btn-large[disabled]:hover,
 .btn-flat[disabled]:hover {
-  background-color: #DFDFDF !important;
-  color: #9F9F9F !important;
+  background-color: #DFDFDF;
+  color: #9F9F9F;
 }
 
 .btn, .btn-large,
@@ -5208,7 +5208,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #083b66 !important;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: .2s ease-out;

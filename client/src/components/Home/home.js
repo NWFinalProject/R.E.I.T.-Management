@@ -32,7 +32,9 @@ const Homepage = props =>
         <div class="row center">
         </div>
         <div class="row center">
-         <Link to="/signup"> <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">New Users</a> </Link>
+         <Link to="/signup" id="download-button" className="btn-large waves-effect waves-light teal lighten-1" > 
+          New Users
+         </Link>
         </div>
         
 

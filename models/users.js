@@ -12,7 +12,28 @@ module.exports = function(sequelize, DataTypes){
         password: {
             type: DataTypes.STRING, 
             allowNull: false
+        },
+        address: {
+            type: DataTypes.STRING, 
+            allowNull: false
+        },
+        city: {
+            type: DataTypes.STRING, 
+            allowNull: false
+        },
+        state: {
+            type: DataTypes.STRING, 
+            allowNull: false
+        },
+        zip: {
+            type: DataTypes.STRING, 
+            allowNull: false
+        },
+        role: {
+            type: DataTypes.STRING, 
+            allowNull: false
         }
+
     });
     // User.associate = function(models){
     //     User.hasMany(models.Renter, {

@@ -15,6 +15,7 @@ class AdminIssueForm extends Component {
   
     this.state = {
       requests: [],
+      id: "",
       firstName: "",
       lastName: "",
       emailAddress: "",
@@ -44,7 +45,8 @@ class AdminIssueForm extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    console.log('this is our name of the thing we are going ot change', name);
+    console.log('this is our name of the thing we are going to change', name);
+    console.log('this is the value...', value);
     this.setState({
       [name]: value
     });
@@ -52,21 +54,21 @@ class AdminIssueForm extends Component {
 
 
 
-  handleFormSubmit = event => {
-    event.preventDefault();
+  handleFormSubmit = (id) => {
+    // event.preventDefault()
+
+    console.log("id = " + id);
     if (this.state.contractorName && this.state.requestStatus) {
     
-    console.log(this.state);
+    console.log("CONTRACTOR AND STATE " + this.state.contractorName + this.state.requestStatus);
 
     let self = this;
      
-     API.saveRequests({
-        first_name: this.state.firstName,
-        last_name: this.state.lastName,
-        email_address: this.state.emailAddress,
-        request_detail: this.state.Description,
+     API.adminUpdate({
+        id: id,
         contractor_name: this.state.contractorName,
         request_status: this.state.requestStatus
+
       })
       .then( function(res) {
         console.log(res);
@@ -74,10 +76,9 @@ class AdminIssueForm extends Component {
       })
       .catch(err => console.log(err));
     }
-  };
+  }
 
   render() {  
-    console.log('this is our state ----', this.props);
     const style = {
       headerStyle: {
         marginBottom: '20px'
@@ -106,13 +107,14 @@ class AdminIssueForm extends Component {
                 name="contractorName"
                 placeholder="Enter Contractor Name"
               />
+              </form>
               <FormBtn
                 disabled={!(this.state.requestStatus && this.state.contractorName)}
-                onClick={this.handleFormSubmit}
+                onClick={(
+                  ) => this.handleFormSubmit(this.props.singleDude.id)}
               >
                 Submit!
               </FormBtn>
-              </form>
                     
               
               

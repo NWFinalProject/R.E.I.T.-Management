@@ -1,6 +1,17 @@
 import React from "react";
 
-export const FormBtn = props =>
-  <button {...props} style={{ float: "right" }} className="btn btn-success">
-    {props.children}
-  </button>;
+export const FormBtn = props => {
+
+	let buttonStyles = {
+		float: "right", 
+		color: "white", 
+		backgroundColor: "#083b66"
+	}
+
+	return (
+		<button {...props} style={buttonStyles} className="btn btn-success">
+			{props.children}
+		</button>
+	);
+}
+  

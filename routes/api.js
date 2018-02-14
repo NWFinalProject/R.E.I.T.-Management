@@ -9,17 +9,45 @@ module.exports = function(app){
     });
 
     app.post("/newrequest", function(req, res) {
-    	console.log(req.body);
-    	db.Renter.create({
-    	first_name: req.body.first_name,
+        console.log(req.body);
+        db.Renter.create({
+        first_name: req.body.first_name,
         last_name: req.body.last_name,
         email_address: req.body.email_address,
         request_detail: req.body.request_detail,
-        request_status: "New"
-    	});
+        request_status: "New",
+        UserID: "1"
+        });
 
-    	res.send(200);
+        res.send(200);
+    });
+
+
+
+    app.post("/adminupdate", function (req, res) {
+        console.log ('this is our req.body!!!!!',req.body);
+
+
+        var status = req.body.request_status;
+        var contractor_name = req.body.contractor_name
+
+        db.Renter.update({
+            request_status: status,
+            contractor_name: contractor_name
+        },{
+            where:{
+                id: req.body.id
+            }
+        })
+        .then(function(thingFromDb) {
+            console.log('this the confimatino from the DB!!!', thingFromDb);
+        })
+        res.send(200);
     })
+
+    
+
+
     app.post("/signup", function(req, res) {
        console.log(res.body);
    db.User.create({
