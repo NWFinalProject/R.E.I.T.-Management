@@ -1,13 +1,17 @@
 import axios from "axios";
 
 export default {
-  getRequests: function() {
-    return axios.get("/requests")
-    // .then(function(response) {
-    //   console.log('our resoinse!!!',response);
-    // });
+  getRequests: function(ourUser) {
+    return axios.get("/requests", {
+      params: {
+        username: ourUser.username
+      }
+    });
   },
 
+getAdminRequests:function(){
+  return axios.get("/Adminrequests");
+},
  saveRequests: function(requestsData) {
     return axios.post("/newrequest", requestsData);
   },

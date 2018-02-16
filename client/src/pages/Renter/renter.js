@@ -23,10 +23,13 @@ class Renters extends Component {
   }
 
  loadRequests = () => {
-   API.getRequests()
+   console.log(localStorage.getItem("userName"));
+   API.getRequests({
+    username: localStorage.getItem("userName")
+   })
       .then((res) => {
         console.log('this is res ----', res);
-        this.setState({ requests: res.data, firstName: "", lastName: "", emailAddress: "", Description: "" })
+        this.setState({ requests: res.data, firstName: "", lastName: "", emailAddress: "", Description: "", username: ""})
       })
       .catch(err => console.log(err));
   };
@@ -50,7 +53,8 @@ handleInputChange = event => {
         first_name: this.state.firstName,
         last_name: this.state.lastName,
         email_address: this.state.emailAddress,
-        request_detail: this.state.Description
+        request_detail: this.state.Description,
+        username: localStorage.getItem("userName")
       })
       .then( function(res) {
         console.log(res);

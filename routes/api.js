@@ -2,6 +2,19 @@ var db = require ("../models");
 
 module.exports = function(app){
     app.get("/requests", function(req, res){
+        console.log(req.query.username);
+        db.Renter.findAll({
+            where: {
+                username: req.query.username
+            }
+        }).then(function(rentersDB){
+            // console.log(rentersDB);
+            res.json(rentersDB);
+            // console.log(rentersDB[0].first_name);
+        });
+    });
+
+          app.get("/Adminrequests", function(req, res){
         db.Renter.findAll({}).then(function(rentersDB){
             res.json(rentersDB);
             console.log(rentersDB[0].first_name);
@@ -16,7 +29,7 @@ module.exports = function(app){
         email_address: req.body.email_address,
         request_detail: req.body.request_detail,
         request_status: "New",
-        UserID: "1"
+        username: req.body.username
         });
 
         res.send(200);
@@ -64,11 +77,15 @@ module.exports = function(app){
     });
     
 
-
     app.post("/signup", function(req, res) {
        console.log(res.body);
    db.User.create({
+     role: req.body.role,
      username: req.body.username,
+     address: req.body.address,
+     city: req.body.city,
+     state: req.body.state,
+     zip: req.body.zip,
      email: req.body.email,
      password: req.body.password
    }).then(function() {

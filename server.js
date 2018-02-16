@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const routes = require("./routes");
+//const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
@@ -8,7 +8,6 @@ var path = require("path");
 var passport = require("./config/passport");
 // Sets up the Express App
 // =============================================================
-
 
 
 // Sets up the Express app to handle data parsing
@@ -19,6 +18,11 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory to be served
 app.use(express.static("client/build"));
+
+// We need to use sessions to keep track of our user's login status
+//app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // =============================================================
@@ -34,7 +38,7 @@ require("./routes/api.js")(app);
 
 
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname, "./client/build/index.html"));
+	res.sendFile(path.join(__dirname, "./client/build"));
 });
 
 db.sequelize.sync().then(function() {

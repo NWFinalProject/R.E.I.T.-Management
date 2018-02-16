@@ -9,7 +9,7 @@ export const FormBtn = props => {
 	}
 
 	return (
-		<button {...props} style={buttonStyles} className="btn btn-success">
+		<button {...props} style={buttonStyles} className="btn">
 			{props.children}
 		</button>
 	);

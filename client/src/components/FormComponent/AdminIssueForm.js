@@ -35,7 +35,7 @@ class AdminIssueForm extends Component {
 
 
  loadRequests = () => {
-   API.getRequests()
+   API.getAdminRequests()
       .then((res) => {
         console.log('this is res ----', res);
         this.setState({ requests: res.data, firstName: "", lastName: "", emailAddress: "", Description: "", contractorName: "", requestStatus: "" })

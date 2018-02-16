@@ -30,11 +30,13 @@ class Signup extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.role&& this.state.username&& this.state.address&& this.state.city&& this.state.state&& this.state.zip&& this.state.email && this.state.password) {
     
     console.log(this.state);
+    localStorage.setItem("userName", this.state.username);
+    console.log("this is our localStorage:", localStorage.getItem("userName"));
 
     let self = this;
      

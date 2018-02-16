@@ -35,7 +35,22 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATE,
             allowNull: true,
             notEmpty: true
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     });
+
+        Renter.associate = function(models) {
+   // We're saying that a Post should belong to an Author
+   // A Post can't be created without an Author due to the foreign key constraint
+       Renter.belongsTo(models.User, {
+         foreignKey: false,
+         allowNull: true
+       })
+     };
+
+
     return Renter;
 };
