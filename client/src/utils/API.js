@@ -23,7 +23,10 @@ export default {
   adminUpdate: function(data) {
     console.log('we hit the admin update!!')
     return axios.post("/adminupdate", data);
-  }
+  },
+contUpdate: function(data){
+  return axios.post("/contupdate",data);
+}
 
 }
 

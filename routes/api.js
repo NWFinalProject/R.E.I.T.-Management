@@ -43,8 +43,25 @@ module.exports = function(app){
             console.log('this the confimatino from the DB!!!', thingFromDb);
         })
         res.send(200);
-    })
+    });
 
+    app.post("/contupdate",function(req,res){
+        var status = req.body.request_status;
+        var scheduled_date = req.body.scheduled_date
+
+        db.Renter.update({
+            request_status: status,
+            scheduled_date: scheduled_date
+        },{
+            where:{
+                id: req.body.id
+            }
+        })
+        .then(function(thingFromDb){
+            console.log('this is the thing from DB', thingFromDb);
+        })
+        res.send(200);
+    });
     
 
 
