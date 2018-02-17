@@ -144,7 +144,7 @@ handleFormSubmit = event => {
                 disabled={!(this.state.username && this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
-                Submit
+                <Link to={`/${this.state.role}`}>  Submit  </Link>
               </FormBtn>
              
             </form>

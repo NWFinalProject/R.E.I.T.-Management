@@ -123,7 +123,9 @@ handleInputChange = event => {
             {this.state.requests.map(singleDude => (
                 <a style={{color: 'black', fontSize: '20px'}} className="collection-item">
                   <span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span>
-                    {singleDude.request_detail}
+                                             <li><a href="sass.html">{singleDude.request_detail}</a></li>
+                          <li><a href="badges.html">{singleDude.contractor_name}</a></li>
+                           <li><a href="collapsible.html">{singleDude.scheduled_date}</a></li>
                 </a>
                 ))}
               </div>
@@ -137,9 +139,21 @@ handleInputChange = event => {
 
       const PayRent = (
 
-      
+        <div className="paypalpage" style={{textAlign: "center", fontSize: "20px", color: "#083b66", marginTop: "50px", lineHeight: "1.5rem"}}>
+          <p>Rent can be mailed to: <br />
+            <br />
+            REIT Management<br />
+            555 Reit Row<br />
+            Chicago, IL 60633<br />
+            <br />
             
+            Or Use the Paypal Button Below: <br />
+
+      
+            </p>
+            <br />
             <PaypalBtn />
+            </div>
               
 
         );
@@ -210,7 +224,7 @@ handleInputChange = event => {
         <nav className="white" >
           
         <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}>Make a Request</button></li>
-        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>Open Request</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_request")}}>View Open Request</button></li>
         <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("payrent")}}>Pay Rent</button></li>
         </nav>
         {htmlThatWillShow}

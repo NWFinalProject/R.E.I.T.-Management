@@ -27,6 +27,7 @@ module.exports = function(app){
         last_name: req.body.last_name,
         email_address: req.body.email_address,
         request_detail: req.body.request_detail,
+        contractor_name: req.body.contractor_name,
         request_status: "New",
         username: req.body.username
         });

@@ -94,13 +94,44 @@ class Contractor extends Component {
     );
       
     const ShowInvoice = (
-      <div className="collection">
-        <a href="#!" className="collection-item">Invoice 1</a>
-        <a href="#!" className="collection-item">Invoice 2</a>
-        <a href="#!" className="collection-item">Invoice 3</a>
-        <a href="#!" className="collection-item">Invoice 4</a>
-      </div>
-
+      <Container fluid>
+          <Col size="md-12">
+            <nav-wrapper>
+            <form>
+              <Input
+                value={this.state.jobId}
+                onChange={this.handleInputChange}
+                name="jobId"
+                placeholder="Job ID"
+              />
+              <Input
+                value={this.state.Name}
+                onChange={this.handleInputChange}
+                name="Name"
+                placeholder="Name"
+              />
+              <Input
+                value={this.state.Price}
+                onChange={this.handleInputChange}
+                name="Price"
+                placeholder="Price $USD (required)"
+              />
+              <TextArea
+                value={this.state.Notes}
+                onChange={this.handleInputChange}
+                name="Notes"
+                placeholder="Invoice Notes (Optional)"
+              />
+              <FormBtn
+                disabled={!(this.state.jobId && this.state.Name && this.state.Price && this.state.Notes)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit 
+              </FormBtn>
+            </form>
+          </nav-wrapper>
+        </Col>
+      </Container>
     );
 
 
