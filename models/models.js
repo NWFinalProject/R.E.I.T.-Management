@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
             notEmpty: true
         },
         scheduled_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: true,
             notEmpty: true
         },

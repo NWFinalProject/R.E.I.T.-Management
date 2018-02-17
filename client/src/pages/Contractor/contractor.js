@@ -18,7 +18,8 @@ class Contractor extends Component {
     Description: "",
     contractorName: "",
     requestStatus: "",
-    scheduledDate: ""
+    scheduledDate: "",
+    belowSection: "renter_request"
   };
 
   componentDidMount() {

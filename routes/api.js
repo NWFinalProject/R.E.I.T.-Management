@@ -29,7 +29,9 @@ module.exports = function(app){
         request_detail: req.body.request_detail,
         contractor_name: req.body.contractor_name,
         request_status: "New",
-        username: req.body.username
+        username: req.body.username,
+        contractor_name: "Unassigned",
+        scheduled_date: "N/A"
         });
 
         res.send(200);
