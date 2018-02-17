@@ -95,7 +95,7 @@ const Homepage = props =>
         <div class="col l12 s12">
           <p class="grey-text text-lighten-10">We are a team of college students working on this project like it's our full time job. Any amount of support would help continue development on this project and is greatly appreciated.</p>
                   <ul>
-            <img id="github-container" class="github-logo" src="github-icon."/> 
+            <img id="github-container" class="github-logo" src="github-icon.png"/> 
             <li><a id="githublink" href="https://github.com/whitaweb">Whitney Webster</a></li>
             <li><a id="githublink" href="https://github.com/pd164594">Patrick Doyle</a></li>
             <li><a id="githublink" href="https://github.com/alrodis">Alvin Rodis</a></li>

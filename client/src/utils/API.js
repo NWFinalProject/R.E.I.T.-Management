@@ -4,7 +4,7 @@ export default {
   getRequests: function(ourUser) {
     return axios.get("/requests", {
       params: {
-        username: ourUser.username
+        // username: ourUser.username
       }
     });
   },

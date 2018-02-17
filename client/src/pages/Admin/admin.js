@@ -102,7 +102,7 @@ class Admin extends Component {
     const ShowInvoice = (
       <div className="collection">
         <a href="#!" className="collection-item">Invoice 1</a>
-        <a href="#!" className="collection-item active">Invoice 2</a>
+        <a href="#!" className="collection-item">Invoice 2</a>
         <a href="#!" className="collection-item">Invoice 3</a>
         <a href="#!" className="collection-item">Invoice 4</a>
       </div>
@@ -128,7 +128,7 @@ class Admin extends Component {
 
     return (
       
-    <Container fluid>
+    <div>
       <nav className="white" role="navigation">
         <div className="nav-wrapper container">
           <a href="/">
@@ -160,13 +160,13 @@ class Admin extends Component {
       </div>
 
       <nav className="white" >
- <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("make_request")}}> Requests</button></li>
+ <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("renter_request")}}> Requests</button></li>
         <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_invoice")}}>Show Invoices</button></li>
       </nav>
 
          {htmlThatWillShow}
 
-    </Container>
+    </div>
 
     );
   }

@@ -62,7 +62,7 @@ handleFormSubmit = event => {
     console.log('this is our staet ----', this.state);
     return (
 
-      <Container fluid>
+      <div>
 
       <nav className="white" role="navigation">
         <div className="nav-wrapper container">
@@ -149,7 +149,7 @@ handleFormSubmit = event => {
             </form>
           </Col>
           
-      </Container>
+      </div>
     );
   }
 }

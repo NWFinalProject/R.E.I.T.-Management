@@ -171,7 +171,7 @@ handleInputChange = event => {
 
 
     return (
-      <Container fluid>
+      <div>
         
         <nav className="white" role="navigation">
           <div className="nav-wrapper container">
@@ -215,7 +215,7 @@ handleInputChange = event => {
         </nav>
         {htmlThatWillShow}
 
-      </Container>
+      </div>
     );
   }
 }

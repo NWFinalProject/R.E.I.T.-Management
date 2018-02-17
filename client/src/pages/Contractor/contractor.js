@@ -64,59 +64,104 @@ class Contractor extends Component {
     }
   };
 
+ handleBelowState = type => {
+    console.log("Working!",type);
+    this.setState({belowSection: type})
+    this.loadRequests()
+  }
+
   render() {  
 
-    console.log('this is our state ----', this.state);
-    const style = {
-      headerStyle: {
-        marginBottom: '20px'
-      }
-    }
-    return (
-      <div>
-        <nav className="white" role="navigation" style={style.headerStyle}>
-          <div className="nav-wrapper container">
-            <a href="/">
-              <img id="logo-container" className="brand-logo" src="Logo2.png"/> 
-          </a>
-            <ul className="right hide-on-med-and-down">
-              <li><a id="rentlink" href="https://www.paypal.com/webapps/shoppingcart?flowlogging_id=e6a6c0f3d4816&mfid=1517945926403_e6a6c0f3d4816#/checkout/openButton">Quick Rent Payment</a></li>
-            </ul>
+    let htmlThatWillShow;
 
-            <ul id="rentlink" className="side-nav">
-              <li><a href="https://www.paypal.com/cgi-bin/webscr">Rent Payment</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
-          </div>
-        </nav>
-        <Row>
-      
+    const ShowARequestHtml = (
+      <div className="collection">
 
-          <Col size="md-10">
-            <Jumbotron>
-              <p>Open Issues</p>
-            </Jumbotron>
-            
-            
+          
             {this.state.requests.length ? (
-              <div className="collection">
-                <h4>Here are all the Open Issues:</h4>
+              <div className="collection-item">
                 {this.state.requests.map(singleDude => (
-
-
-                  <div>
-
+                  <div style={{color: 'black', fontSize: '20px'}} className="collection-item">
                     <ContForm singleDude={singleDude} />
                   </div>
-
+      
                 ))}
               </div>
             ) : (
               <h3>There are no open issues.</h3>
             )}
-          </Col>
-        </Row>
+</div>
+    );
+      
+    const ShowInvoice = (
+      <div className="collection">
+        <a href="#!" className="collection-item">Invoice 1</a>
+        <a href="#!" className="collection-item">Invoice 2</a>
+        <a href="#!" className="collection-item">Invoice 3</a>
+        <a href="#!" className="collection-item">Invoice 4</a>
+      </div>
+
+    );
+
+
+    if (this.state.belowSection === "renter_request") {
+      htmlThatWillShow = ShowARequestHtml;
+    } else if (this.state.belowSection === "show_invoice") {
+      htmlThatWillShow = ShowInvoice;
+    }
+
+      const style = {
+      buttonStyle: {
+        width: "100%"
+      },
+      buttonLiStyle: {
+        display: "inline-block",
+        width: "50%"
+      }
+    }
+
+    return (
+      
+    <div>
+      <nav className="white" role="navigation">
+        <div className="nav-wrapper container">
+          <a href="/">
+            <img id="logo-container" className="brand-logo" src="Logo2.png"/> 
+          </a>
+      
+          <ul className="right hide-on-med-and-down">
+            <li><a id="signOutLink" href="">Sign Out</a></li>
+          </ul>
+
+          <ul id="signOutlink" className="side-nav">
+             <li><a href="">Sign Out</a></li>
+          </ul>
+      
+          <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
         </div>
+      </nav>
+
+      
+      <div id="index-banner" style={{height: '50px', minHeight: '200px'}} className="parallax-container">
+        <div className="section no-pad-bot">
+          <div className="container">
+            <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+              <div className="row center"></div>
+              <div className="row center"></div>
+          </div>
+        </div>
+        <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+      </div>
+
+      <nav className="white" >
+ <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1" onClick={() => {this.handleBelowState("renter_request")}}>Open Requests</button></li>
+        <li style={style.buttonLiStyle}><button style={style.buttonStyle} className="btn-large waves-effect waves-light teal lighten-1"  onClick={() => {this.handleBelowState("show_invoice")}}>Submit Invoice</button></li>
+      </nav>
+
+         {htmlThatWillShow}
+
+    </div>
+
     );
   }
 }
