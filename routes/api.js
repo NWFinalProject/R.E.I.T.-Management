@@ -2,15 +2,14 @@ var db = require ("../models");
 
 module.exports = function(app){
     app.get("/requests", function(req, res){
-        console.log(req.query.username);
+        console.log("this is our Request param", req);
         db.Renter.findAll({
             where: {
                 username: req.query.username
             }
         }).then(function(rentersDB){
-            // console.log(rentersDB);
-            res.json(rentersDB);
-            // console.log(rentersDB[0].first_name);
+          console.log(rentersDB);
+           res.json(rentersDB);
         });
     });
 

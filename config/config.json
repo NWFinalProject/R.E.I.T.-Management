@@ -1,7 +1,7 @@
 { 
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Fourdown1!",
     "database": "reit_mgt_db",
     "host": "localhost",
     "dialect": "mysql"

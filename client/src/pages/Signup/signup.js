@@ -8,6 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import PaypalBtn from "../../components/Paypal";
 
+
 class Signup extends Component {
   state = {
     role: "",
@@ -138,7 +139,7 @@ handleFormSubmit = event => {
                 placeholder="Password"
                 type="password"
               />
-           
+              
               <FormBtn
                 disabled={!(this.state.username && this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
