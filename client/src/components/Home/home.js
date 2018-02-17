@@ -10,7 +10,7 @@ const Homepage = props =>
 
      <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a href="/homepage">
+      <a href="/">
       	<img id="logo-container" class="brand-logo" src="Logo2.png"/> 
   	</a>
       <ul class="right hide-on-med-and-down">
