@@ -87,8 +87,8 @@ class AdminIssueForm extends Component {
 
     return (
       <div>
-                  <a className="collection-item">
-                    <span className="badge">{"current status: " + this.props.singleDude.request_status}</span>
+                  <a className="collection-item" style={{paddingBottom: '40px', backgroundColor: 'white', textDecoration: 'none'}}>
+                    <span className="badge" style={{backgroundColor: 'white', color: '#e78200'}}>{"Status: " + this.props.singleDude.request_status}</span>
                     {this.props.singleDude.request_detail}
                     <form>
                     <Input
@@ -99,7 +99,7 @@ class AdminIssueForm extends Component {
               />
                 </form>
                 <form>
-                    <span className="badge">{"current contractor: " + this.props.singleDude.contractor_name}</span>
+                    <span className="badge" style={{backgroundColor: 'white', color: '#e78200'}}>{"Contractor: " + this.props.singleDude.contractor_name}</span>
                     {/*{singleDude.contractor_name}*/}
                     <Input
                 value={this.state.contractorName}
@@ -107,14 +107,15 @@ class AdminIssueForm extends Component {
                 name="contractorName"
                 placeholder="Enter Contractor Name"
               />
-              </form>
+             
               <FormBtn
                 disabled={!(this.state.requestStatus && this.state.contractorName)}
                 onClick={(
                   ) => this.handleFormSubmit(this.props.singleDude.id)}
               >
-                Submit!
+                Submit
               </FormBtn>
+               </form>
                     
               
               
@@ -125,5 +126,6 @@ class AdminIssueForm extends Component {
     );
   }
 }
+
 
 export default AdminIssueForm;

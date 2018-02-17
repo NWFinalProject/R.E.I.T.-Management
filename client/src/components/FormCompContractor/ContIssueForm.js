@@ -88,8 +88,8 @@ class ContIssueForm extends Component {
 
     return (
       <div>
-                  <a className="collection-item">
-                    <span className="badge">{"current status: " + this.props.singleDude.request_status}</span>
+                  <a className="collection-item" style={{paddingBottom: '40px', backgroundColor: 'white', textDecoration: 'none'}}>
+                    <span className="badge" style={{backgroundColor: 'white', color: '#e78200'}}>{"current status: " + this.props.singleDude.request_status}</span>
                     {this.props.singleDude.request_detail}
                     <form>
                     <Input
@@ -100,7 +100,7 @@ class ContIssueForm extends Component {
               />
                 </form>
                 <form>
-                    <span className="badge">{"current scheduled date: " + this.props.singleDude.scheduled_date}</span>
+                    <span className="badge"style={{paddingBottom: '40px', backgroundColor: 'white', textDecoration: 'none', color: "#e78200"}}>{"current scheduled date: " + this.props.singleDude.scheduled_date}</span>
                     {/*{singleDude.contractor_name}*/}
                     <Input
                 value={this.state.scheduledDate}
