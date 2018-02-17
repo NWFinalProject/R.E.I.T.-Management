@@ -83,7 +83,17 @@ handleFormSubmit = event => {
         </div>
       </nav>
 
-          <Col size="md-12">
+          
+           <div id="index-banner" style={{height: '50px', minHeight: '200px'}} className="parallax-container">
+        <div className="section no-pad-bot">
+          <div className="container">
+            <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+              <div className="row center"></div>
+              <div className="row center"></div>
+          </div>
+        </div>
+        <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+      </div>
             <Jumbotron>
               <p>Sign Up</p>
             </Jumbotron>
@@ -150,7 +160,7 @@ handleFormSubmit = event => {
             
              
             </form>
-          </Col>
+         
           
       </div>
     );

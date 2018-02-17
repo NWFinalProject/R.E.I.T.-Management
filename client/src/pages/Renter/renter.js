@@ -113,26 +113,41 @@ handleInputChange = event => {
       </Container>
     );
 
-    const ShowRequest = (
+        const ShowRequest = (
       
      
       
-      <div className="collection">       
+      <div className="collection"> 
+                <div class="row">
+                  <div class="col s12">
+                    <ul class="tabs">
+                      <li class="tab col s2"><a href="#test1">Request ID</a></li>
+                      <li class="tab col s3"><a href="#test1">Request Description</a></li>
+                      <li class="tab col s3"><a class="active" href="#test2">Assigned Contractor</a></li>
+                      <li class="tab col s2"><a href="#test3">Scheduled Date</a></li>
+                      <li class="tab col s2"><a href="#test3">Status</a></li>                     
+                    </ul>
+                  </div>
+                </div>
             {this.state.requests.length ? (
-              <div className="collection-item">
+              <div class ="row" className="collection-item">
             {this.state.requests.map(singleDude => (
-                <a style={{color: 'black', fontSize: '20px'}} className="collection-item">
-                  <span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span>
-                                             <li><a href="sass.html">{singleDude.request_detail}</a></li>
-                          <li><a href="badges.html">{singleDude.contractor_name}</a></li>
-                           <li><a href="collapsible.html">{singleDude.scheduled_date}</a></li>
-                </a>
+                <div class="row">
+                  <div class="col s12">
+                    <ul class="tabs">
+                      <li class="tab col s2"><a href="#test1">{singleDude.id}</a></li>
+                      <li class="tab col s3"><a href="#test1">{singleDude.request_detail}</a></li>
+                      <li class="tab col s3"><a class="active" href="#test2">{singleDude.contractor_name}</a></li>
+                      <li class="tab col s2"><a href="#test3">{singleDude.scheduled_date}</a></li>
+                      <li class="tab col s2"><a href="#test4"><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></a></li>
+                    </ul>
+                  </div>
+                </div>
                 ))}
               </div>
             ) : (
               <h3>There are no open issues.</h3>
             )}
-
       </div>
       );
 
