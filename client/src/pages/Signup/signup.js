@@ -91,7 +91,7 @@ handleFormSubmit = event => {
               <label>
               Choose Your Role:
               <select name="role" onChange={this.handleInputChange} value={this.state.role} style={{display: "block"}}>
-                <option value="administrator">Administrator</option>
+                <option value="admin">Administrator</option>
                 <option value="renter">Renter</option>
                 <option value="contractor">Contractor</option>
               </select>
@@ -140,12 +140,14 @@ handleFormSubmit = event => {
                 type="password"
               />
               
+           
               <FormBtn
                 disabled={!(this.state.username && this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
                 <Link to={`/${this.state.role}`}>  Submit  </Link>
               </FormBtn>
+            
              
             </form>
           </Col>
