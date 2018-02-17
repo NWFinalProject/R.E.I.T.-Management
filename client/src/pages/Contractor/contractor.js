@@ -26,7 +26,7 @@ class Contractor extends Component {
   }
 
  loadRequests = () => {
-   API.getRequests()
+   API.getAdminRequests()
       .then((res) => {
         console.log('this is res ----', res);
         this.setState({ requests: res.data, id: "", firstName: "", lastName: "", emailAddress: "", Description: "", contractorName: "", requestStatus: "", scheduledDate: "" })
