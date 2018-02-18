@@ -218,7 +218,7 @@ handleInputChange = event => {
         </nav>
 
 
-        <div id="index-banner" style={{ height: '50px', minHeight: '200px'}} className="parallax-container">
+        <div id="index-banner" style={{ height: '60px', minHeight: '200px'}} className="parallax-container">
           <div className="section no-pad-bot">
             <div className="container">
               <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
