@@ -118,29 +118,32 @@ handleInputChange = event => {
      
       
       <div className="collection"> 
-                <div class="row">
-                  <div class="col s12">
-                    <ul class="tabs">
-                      <li class="tab col s2"><a href="#test1">Request ID</a></li>
-                      <li class="tab col s3"><a href="#test1">Request Description</a></li>
-                      <li class="tab col s3"><a class="active" href="#test2">Assigned Contractor</a></li>
-                      <li class="tab col s2"><a href="#test3">Scheduled Date</a></li>
-                      <li class="tab col s2"><a href="#test3">Status</a></li>                     
-                    </ul>
-                  </div>
-                </div>
-            {this.state.requests.length ? (
-              <div class ="row" className="collection-item">
+        {this.state.requests.length ? (
+          <div class ="row" className="collection-item">
             {this.state.requests.map(singleDude => (
                 <div class="row">
                   <div class="col s12">
-                    <ul class="tabs">
-                      <li class="tab col s2"><a href="#test1">{singleDude.id}</a></li>
-                      <li class="tab col s3"><a href="#test1">{singleDude.request_detail}</a></li>
-                      <li class="tab col s3"><a class="active" href="#test2">{singleDude.contractor_name}</a></li>
-                      <li class="tab col s2"><a href="#test3">{singleDude.scheduled_date}</a></li>
-                      <li class="tab col s2"><a href="#test4"><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></a></li>
-                    </ul>
+
+                    <table class="striped">
+                    <thead >
+                    <tr>
+                      <th>Request ID</th>
+                      <th>Request Description</th>
+                      <th>Assigned Contractor</th>
+                      <th>Scheduled Date</th>
+                      <th>Status</th>
+                    </tr>
+                    </thead> 
+                    <tbody>
+                    <tr>
+                      <td>{singleDude.id}</td>
+                      <td>{singleDude.request_detail}</td>
+                      <td>{singleDude.contractor_name}</td>
+                      <td>{singleDude.scheduled_date}</td>
+                      <td><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></td>
+                    </tr>
+                    </tbody>
+                    </table>
                   </div>
                 </div>
                 ))}
@@ -172,13 +175,6 @@ handleInputChange = event => {
               
 
         );
-
-
-      
-   
-      
-    
-
 
     if (this.state.belowSection === "make_request") {
       htmlThatWillShow = MakeARequestHtml;
@@ -222,7 +218,7 @@ handleInputChange = event => {
         </nav>
 
 
-        <div id="index-banner" style={{ height: '60px', minHeight: '200px'}} className="parallax-container">
+        <div id="index-banner" style={{ height: '50px', minHeight: '200px'}} className="parallax-container">
           <div className="section no-pad-bot">
             <div className="container">
               <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
