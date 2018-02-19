@@ -115,39 +115,35 @@ handleInputChange = event => {
 
         const ShowRequest = (
       
-     
-      
-      <div className="collection"> 
+      <div className="collection">
         {this.state.requests.length ? (
           <div class ="row" className="collection-item">
-            {this.state.requests.map(singleDude => (
-                <div class="row">
-                  <div class="col s12">
+            <table>
+              <thead>
+                <tr>
+                  <th>Request ID</th>
+                  <th>Request Description</th>
+                  <th>Assigned Contractor</th>
+                  <th>Scheduled Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead> 
+            </table> 
 
-                    <table class="striped">
-                    <thead >
-                    <tr>
-                      <th>Request ID</th>
-                      <th>Request Description</th>
-                      <th>Assigned Contractor</th>
-                      <th>Scheduled Date</th>
-                      <th>Status</th>
-                    </tr>
-                    </thead> 
-                    <tbody>
-                    <tr>
-                      <td>{singleDude.id}</td>
-                      <td>{singleDude.request_detail}</td>
-                      <td>{singleDude.contractor_name}</td>
-                      <td>{singleDude.scheduled_date}</td>
-                      <td><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></td>
-                    </tr>
-                    </tbody>
-                    </table>
-                  </div>
-                </div>
-                ))}
-              </div>
+        {this.state.requests.map(singleDude => (
+            <table class="striped">
+              <tbody>
+                <tr>
+                  <td>{singleDude.id}</td>
+                  <td>{singleDude.request_detail}</td>
+                  <td>{singleDude.contractor_name}</td>
+                  <td>{singleDude.scheduled_date}</td>
+                  <td><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></td>
+                </tr>
+              </tbody>
+            </table>
+            ))}
+          </div>
             ) : (
               <h3>There are no open issues.</h3>
             )}
