@@ -131,16 +131,16 @@ handleInputChange = event => {
             </table> 
 
         {this.state.requests.map(singleDude => (
-            <table class="collection">
-              <thead>
+            <table className="collection">
+              <tbody>
                 <tr>
-                  <th>{singleDude.id}</th>
-                  <th>{singleDude.request_detail}</th>
-                  <th>{singleDude.contractor_name}</th>
-                  <th>{singleDude.scheduled_date}</th>
-                  <th><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></th>
+                  <td>{singleDude.id}</td>
+                  <td>{singleDude.request_detail}</td>
+                  <td>{singleDude.contractor_name}</td>
+                  <td>{singleDude.scheduled_date}</td>
+                  <td><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></td>
                 </tr>
-              </thead>
+              </tbody>
             </table>
             ))}
           </div>
