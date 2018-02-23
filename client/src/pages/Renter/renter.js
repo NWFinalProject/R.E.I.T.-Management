@@ -234,7 +234,7 @@ handleInputChange = event => {
             </div>
           </div>
           
-          <div style={{opacity: '0.5'}} className="parallax"><img style={{height:"200px", width:"100%"}} src="background5.jpg" alt="Unsplashed background img 1"/></div>
+          <div style={{opacity: '0.5'}} className="parallax"><img style={{height:"200px", width:"100%", display:"block"}} src="background5.jpg" alt="Unsplashed background img 1"/></div>
         
         </div>
 

@@ -108,7 +108,7 @@ class ContIssueForm extends Component {
                 name="scheduledDate"
                 placeholder="Enter Schedule Date"
               />
-              </form>
+              
               <FormBtn
                 disabled={!(this.state.requestStatus && this.state.scheduledDate)}
                 onClick={(
@@ -116,7 +116,7 @@ class ContIssueForm extends Component {
               >
                 Submit
               </FormBtn>
-                    
+                 </form>   
               
               
               
