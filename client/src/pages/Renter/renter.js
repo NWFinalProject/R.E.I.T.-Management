@@ -126,6 +126,13 @@ handleInputChange = event => {
                   <th>Assigned Contractor</th>
                   <th>Scheduled Date</th>
                   <th>Status</th>
+                  <th className="col-md-1"></th>
+                  <th className="col-md-2">Request ID</th>
+                  <th className="col-md-2">Request Description</th>
+                  <th className="col-md-2">Assigned Contractor</th>
+                  <th className="col-md-2">Scheduled Date</th>
+                  <th className="col-md-2">Status</th>
+                  <th className="col-md-1"></th>
                 </tr>
               </thead> 
             </table> 
@@ -139,6 +146,13 @@ handleInputChange = event => {
                   <td>{singleDude.contractor_name}</td>
                   <td>{singleDude.scheduled_date}</td>
                   <td><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></td>
+                  <th className="col-md-1"></th>
+                  <th className="col-md-2">{singleDude.id}</th>
+                  <th className="col-md-2">{singleDude.request_detail}</th>
+                  <th className="col-md-2">{singleDude.contractor_name}</th>
+                  <th className="col-md-2">{singleDude.scheduled_date}</th>
+                  <th className="col-md-2"> {singleDude.request_status}</th>
+                  <th className="col-md-1"></th>
                 </tr>
               </tbody>
             </table>
@@ -223,7 +237,7 @@ handleInputChange = event => {
             </div>
           </div>
           
-          <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+          <div style={{opacity: '0.5'}} className="parallax"><img style={{height:"200px", width:"100%"}} src="background5.jpg" alt="Unsplashed background img 1"/></div>
         
         </div>
 

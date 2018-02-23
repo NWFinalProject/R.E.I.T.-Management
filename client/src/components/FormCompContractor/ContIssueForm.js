@@ -114,7 +114,7 @@ class ContIssueForm extends Component {
                 onClick={(
                   ) => this.handleFormSubmit(this.props.singleDude.id)}
               >
-                Submit!
+                Submit
               </FormBtn>
                     
               
