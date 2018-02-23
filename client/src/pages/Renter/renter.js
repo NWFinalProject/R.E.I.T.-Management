@@ -121,11 +121,6 @@ handleInputChange = event => {
             <table>
               <thead>
                 <tr>
-                  <th>Request ID</th>
-                  <th>Request Description</th>
-                  <th>Assigned Contractor</th>
-                  <th>Scheduled Date</th>
-                  <th>Status</th>
                   <th className="col-md-1"></th>
                   <th className="col-md-2">Request ID</th>
                   <th className="col-md-2">Request Description</th>
@@ -141,11 +136,6 @@ handleInputChange = event => {
             <table className="collection">
               <tbody>
                 <tr>
-                  <td>{singleDude.id}</td>
-                  <td>{singleDude.request_detail}</td>
-                  <td>{singleDude.contractor_name}</td>
-                  <td>{singleDude.scheduled_date}</td>
-                  <td><span style={{fontFamily: 'Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif', borderColor:'#008489', background: 'transparent', fontSize: '15px'}} class="badge">{singleDude.request_status}</span></td>
                   <th className="col-md-1"></th>
                   <th className="col-md-2">{singleDude.id}</th>
                   <th className="col-md-2">{singleDude.request_detail}</th>
@@ -185,6 +175,13 @@ handleInputChange = event => {
               
 
         );
+
+
+      
+   
+      
+    
+
 
     if (this.state.belowSection === "make_request") {
       htmlThatWillShow = MakeARequestHtml;
@@ -228,10 +225,10 @@ handleInputChange = event => {
         </nav>
 
 
-        <div id="index-banner" style={{ height: '60px', minHeight: '200px'}} className="parallax-container">
+        <div id="index-banner" style={{ height: '50px', minHeight: '200px'}} className="parallax-container">
           <div className="section no-pad-bot">
             <div className="container">
-              <h1 className="header center teal-text text-lighten-2" >R.E.I.T Management</h1>
+              <h1 className="header center teal-text text-lighten-2" >R.E.I.T. Management</h1>
                 <div className="row center"></div>
                 <div className="row center"></div>
             </div>

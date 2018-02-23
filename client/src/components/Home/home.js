@@ -31,7 +31,7 @@ const Homepage = props =>
       {/*<h1 class="header center teal-text text-lighten-2">R.E.I.T Management</h1>*/}
       <svg viewBox="0 0 1280 720" style={{marginTop:"0px"}}>
         <text text-anchor="middle" x="50%" y="0%">
-        <tspan x="50%" dy="0.8em">R.E.I.T</tspan>
+        <tspan x="50%" dy="0.8em">R.E.I.T.</tspan>
         <tspan x="50%" dy="0.8em">Management</tspan>
 
         </text>
