@@ -92,12 +92,12 @@ handleFormSubmit = event => {
               <div className="row center"></div>
           </div>
         </div>
-        <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+        <div style={{opacity: '0.5'}} className="parallax"><img style={{height:"200px", width:"100%"}}src="background5.jpg" alt="Unsplashed background img 1"/></div>
       </div>
             <Jumbotron>
-              <p>Sign Up</p>
+              <p style={{paddingLeft:"375px"}}>Sign Up</p>
             </Jumbotron>
-            <form>
+            <form class="col-md-9" style={{paddingLeft:"375px"}}>
               <label>
               Choose Your Role:
               <select name="role" onChange={this.handleInputChange} value={this.state.role} style={{display: "block"}}>

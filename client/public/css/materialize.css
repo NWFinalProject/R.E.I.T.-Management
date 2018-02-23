@@ -1017,6 +1017,7 @@
 
 .teal-text.text-lighten-2 {
   color: #083b66 !important;
+  font-family: Ubuntu;
 }
 
 .teal.lighten-1 {
@@ -2557,7 +2558,7 @@ ul:not(.browser-default) > li {
 }
 
 a {
-  color: #039be5;
+  color: black;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -9410,4 +9411,62 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .rentlink{
   font: grey;
   color: white;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  position: absolute;
+  font: 13em Ubuntu;
+  letter-spacing: 0.15em;
+  width: 100%;
+  height: 100%;
+  margin-top: 5%;
+}
+
+svg text {
+  fill: #083b66;
+  stroke: #083b66;
+  fill-opacity: 1;
+  stroke-width: 0;
+  stroke-dasharray: 100% 0;
+  animation-delay: 8s;
+  animation: stroke-offset 6s ease-out;
+
+}
+
+@keyframes stroke-offset {
+  0% {
+    fill-opacity: 0;
+    stroke-width: 0;
+    stroke-dasharray: 0% 100%;
+  }
+  25% {
+    stroke-width: 3px;
+  }
+  50% {
+    fill-opacity: 0;
+  }
+  75% {
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-width: 0;
+  }
+}
+
+.container-title {
+  margin: 0 auto;
+  /*max-width: 1280px;*/
 }

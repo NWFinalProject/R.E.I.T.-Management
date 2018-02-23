@@ -156,7 +156,7 @@ class Admin extends Component {
               <div className="row center"></div>
           </div>
         </div>
-        <div style={{opacity: '0.5'}} className="parallax"><img src="background3.jpg" alt="Unsplashed background img 1"/></div>
+        <div style={{opacity: '0.5'}} className="parallax"><img style={{height:"200px", width:"100%"}} src="background5.jpg" alt="Unsplashed background img 1"/></div>
       </div>
 
       <nav className="white" >

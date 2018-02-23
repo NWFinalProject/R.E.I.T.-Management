@@ -38,7 +38,7 @@ require("./routes/api.js")(app);
 
 
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname, "./client/build"));
+	res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 db.sequelize.sync().then(function() {
